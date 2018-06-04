@@ -1,0 +1,26 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="resource/js/angular.js"></script>
+</head>
+<body>
+ 
+<!-- <div ng-app="myApp"  ng-controller="myCtrl" ng-init="firstName='John'"> -->
+<div ng-app="myApp"  ng-controller="myCtrl" >
+     <p>名字 : <input type="text"  ng-model="firstName"></p>
+     <p>姓氏 : <input type="text"  ng-model="lastName"></p>
+    <h1>hello {{firstName}}</h1>
+</div>
+ 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.firstName= "John";
+        $scope.lastName= "Doe"; 
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="resource/js/angular.js"></script>
+    
+</head>
+<body>
+ 
+<!-- <div ng-app="myApp"  ng-controller="myCtrl" ng-init="firstName='John'"> -->
+<div ng-app="myApp"  ng-controller="myCtrl" ng-init="person={firstName:'John',lastName:'Doe'};persons=[{firstName:'John1',lastName:'Doe1'},{firstName:'John2',lastName:'Doe2'},{firstName:'John3',lastName:'Doe3'} ];names=['Jani','Hege','Kai']; points=[1,15,19,2,40]">
+     <p>名字 : <input type="text"  ng-model="firstName"></p>
+     <p>姓氏 : <input type="text"  ng-model="lastName"></p>
+     <h1>Hello {{firstName +" "+ lastName}}</h1>
+     <h1>hello Mr/Ms {{ person.lastName }}</h1>
+     <h1>循环 </h1>
+     <ul>
+         <li ng-repeat="x in names">
+             hello {{ x }}
+         </li>
+     </ul>
+     <h1>third point: {{  points[3] }}</h1>
+     <ul>
+         <li>
+             <li ng-repeat="xx in persons">
+                 hello {{ xx.firstName +' '+ xx.lastName }}
+             </li>
+         </li>
+     </ul>
+</div>
+ 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      /*   $scope.firstName= "John";
+        $scope.lastName= "Doe"; */
+    });
+    </script>
+
+</body>
+</html>

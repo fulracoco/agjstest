@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="resource/js/angular.js"></script>
+<script src="resource/js/angular-sanitize.js"></script>
+<script src="resource/localjs/B.js"></script>
+<script src="resource/localjs/C.js"></script>
+</head>
+<body>
+<!-- <dy-compile  ng-app="menuApp" id="menuApp" ng-controller="menuCtrl"   html="{{menu_html}}"></dy-compile>   -->
+
+<div ng-app="menuApp2" id="menuApp2" ng-controller="menuCtrl2" ng-bind-html="menu_html2 | to_trusted"> </div> 
+
+<div ng-app="myApp" id="myApp"  ng-controller="myCtrl"  ng-init="quantity=1;cost=5"> 
+    <p>总价1： <span ng-model='price' ng-bind="quantity * cost"></span></p>
+    <label>name:</label><input type="text" ng-model="firstName2"><br><span>hello,{{firstName2}}</span>
+</div>
+ 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      
+    });
+    angular.bootstrap(document.getElementById("myApp"), ['myApp']);
+    </script>
+
+</body>
+</html>

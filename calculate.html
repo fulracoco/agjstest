@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="resource/js/angular.js"></script>
+</head>
+<body>
+ 
+<!-- <div ng-app="myApp"  ng-controller="myCtrl" ng-init="firstName='John'"> -->
+<div ng-app="myApp"  ng-controller="myCtrl"  ng-init="quantity=1;cost=5"> 
+    <p>总价1： <span ng-model='price' ng-bind="quantity * cost"></span></p>
+    <p>总价2： <span ng-model='price2' >{{ quantity*cost }}</span></p>
+</div>
+ 
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+        $scope.quantity = 2;
+        $scope.cost=3;
+        $scope.price2 = $scope.quantity*$scope.cost;
+        console.log($scope.quantity);
+        console.log($scope.cost);
+        console.log($scope.price2);
+    });
+    </script>
+
+</body>
+</html>
